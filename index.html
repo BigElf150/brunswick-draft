@@ -1,5 +1,34 @@
-<title>Brunswick — Pastry, Coffee, Bakehouse</title>
-
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Brunswick — Pastry, Coffee, Bakehouse | Dammam &amp; Al Khobar</title>
+<meta name="description" content="Brunswick — pastry, coffee and bakehouse in Dammam and Al Khobar. Laminated by hand, baked in small batches through the morning. Open from six.">
+<link rel="canonical" href="https://bigelf150.github.io/brunswick-draft/">
+<meta name="theme-color" content="#01251F">
+<!-- LAUNCH SWITCH: while this is a draft it must stay noindex and keep the footer disclaimer.
+     To go live: change the line below to "index, follow" AND delete the two footer lines
+     marked data-draft. Nothing else needs touching. -->
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Brunswick">
+<meta property="og:title" content="Brunswick — Pastry, Coffee, Bakehouse">
+<meta property="og:description" content="Brunswick — pastry, coffee and bakehouse in Dammam and Al Khobar. Laminated by hand, baked in small batches through the morning. Open from six.">
+<meta property="og:url" content="https://bigelf150.github.io/brunswick-draft/">
+<meta property="og:image" content="https://bigelf150.github.io/brunswick-draft/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ar_SA">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/favicon.png" sizes="any">
+<link rel="apple-touch-icon" href="img/favicon.png">
+<link rel="preload" as="image" href="img/poster.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Bakery","name":"Brunswick — AlFaisaliah","alternateName":"برانزويك — الفيصلية","image":"https://bigelf150.github.io/brunswick-draft/img/og.jpg","url":"https://bigelf150.github.io/brunswick-draft/","servesCuisine":["Bakery","Coffee"],"priceRange":"$$","address":{"@type":"PostalAddress","addressLocality":"Dammam","addressCountry":"SA","streetAddress":"4272 Imam Mohammed bin Saud Rd, AlFaisaliah"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"06:00","closes":"23:00"}],"sameAs":["https://www.instagram.com/brunswick.sa"]},{"@type":"Bakery","name":"Brunswick — AlKhobar AlShamalia","alternateName":"برانزويك — الخبر الشمالية","image":"https://bigelf150.github.io/brunswick-draft/img/og.jpg","url":"https://bigelf150.github.io/brunswick-draft/","servesCuisine":["Bakery","Coffee"],"priceRange":"$$","address":{"@type":"PostalAddress","addressLocality":"Al Khobar","addressCountry":"SA"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"06:00","closes":"23:00"}],"sameAs":["https://www.instagram.com/brunswick.sa"]},{"@type":"Bakery","name":"Brunswick — AlRakah Beach","alternateName":"برانزويك — الراكة","image":"https://bigelf150.github.io/brunswick-draft/img/og.jpg","url":"https://bigelf150.github.io/brunswick-draft/","servesCuisine":["Bakery","Coffee"],"priceRange":"$$","address":{"@type":"PostalAddress","addressLocality":"Al Khobar","addressCountry":"SA"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"07:00","closes":"23:00"}],"sameAs":["https://www.instagram.com/brunswick.sa"]}]}</script>
+<style>*{margin:0;padding:0}html,body{background:#01251F}img,video{display:block;max-width:100%}</style>
+</head>
+<body>
 <style>
   :root{
     --teal:#013A34; --teal-deep:#01251F;
@@ -205,7 +234,7 @@
 <div class="pg" id="pg" dir="ltr" lang="en">
 
   <div class="filmwrap" aria-hidden="true"><div class="film">
-    <video id="film" muted playsinline webkit-playsinline preload="auto" poster="img/poster.jpg"><source src="film.mp4" type="video/mp4"></video>
+    <video id="film" muted playsinline webkit-playsinline preload="auto" poster="img/poster.jpg"></video>
     <div class="film__tint"></div>
   </div>
 
@@ -442,7 +471,7 @@
         <p class="pend" data-t="pend">WhatsApp number still to be supplied — the button is wired and inactive until then.</p>
         <div class="foot" style="margin-block-start:2rem;border-block-start:1px solid var(--rule)">
           <span data-t="fo1">Brunswick · Dammam &amp; Al Khobar</span>
-          <span data-t="fo2">Concept site — not Brunswick's official website</span>
+          <span data-draft data-t="fo2">Concept site — not Brunswick's official website</span>
         </div>
       </div>
     </section>
@@ -451,6 +480,14 @@
 
 <script>
 (function(){
+  /* Pick the cut BEFORE the element starts loading. Phones are usually on cellular and cannot
+     resolve 1280 anyway: 854px saves 3.1MB. No <source> in the markup, so nothing loads until
+     this runs. */
+  (function(){
+    var v=document.getElementById('film');
+    var small=Math.min(innerWidth,innerHeight)<=520||/iPhone|Android.*Mobile/i.test(navigator.userAgent);
+    v.src=small?'film-m.mp4':'film.mp4';
+  })();
   /* Without this a phone lays the page out at ~980px and scales the whole thing down, so every
      type size and tap target ends up a third of its intended size. Added from script because the
      document head is not ours to write. */
@@ -599,3 +636,6 @@
   });
 })();
 </script>
+
+</body>
+</html>
