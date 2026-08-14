@@ -196,6 +196,19 @@
   .br__a{font-size:var(--s--1);opacity:.78}
   .br__h{font-variant-numeric:tabular-nums;font-family:var(--ui);direction:ltr;font-size:var(--s--1)}
 
+  /* Google aggregate. Deliberately the ONLY Google review surface: the API caps at 5 reviews,
+     has no rating filter, and exposes no review-attached customer photos. One honest number
+     beats five cherry-picked cards. */
+  .trust{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:center;gap:.6rem 1.4rem;
+    padding-block:clamp(1.6rem,4vw,2.6rem);text-align:center}
+  .trust__n{font-family:var(--disp);font-size:var(--s-3);font-weight:700;line-height:1;
+    letter-spacing:-.01em}
+  .trust__n sub{font-family:var(--ui);font-size:.28em;font-weight:400;opacity:.6;
+    vertical-align:baseline;margin-inline-start:.35em}
+  .trust__s{color:var(--band-fg);letter-spacing:.22em;font-size:var(--s-1)}
+  .trust__m{font-family:var(--ui);font-size:var(--s--1);opacity:.75;letter-spacing:.06em}
+  .trust__m a{color:inherit}
+
   .cta{display:flex;flex-wrap:wrap;gap:.7rem;margin-block-start:1.5rem}
   .btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--ui);font-weight:600;
     padding:.8rem 1.4rem;border-radius:2px;text-decoration:none;border:1px solid transparent;
@@ -377,6 +390,14 @@
       </div>
     </section>
 
+    <section class="panel panel--band">
+      <div class="wrap trust rv">
+        <span class="trust__n">4.7<sub data-t="rof">out of 5</sub></span>
+        <span class="trust__s" aria-hidden="true">★★★★★</span>
+        <span class="trust__m"><span data-t="rcount">312 reviews</span> · <a href="https://maps.app.goo.gl/FkFzkMNubNddSxtK9" target="_blank" rel="noopener" data-t="rlink">Read them on Google</a></span>
+      </div>
+    </section>
+
     <div class="gap gap--sm"></div>
 
     <section class="panel" id="visit">
@@ -412,9 +433,10 @@
         <h2 class="h2" data-t="h6">Catering &amp; name cakes<em>تموين وكيك بالأسماء</em></h2>
         <p class="lede" data-t="p6">Pastry boxes for meetings and gatherings, and cakes finished with a name. Send the date, the headcount and what you want on it.</p>
         <div class="cta">
-          <a class="btn btn--p" href="#" data-t="b1">Message on WhatsApp</a>
+          <a class="btn btn--p" href="#" data-wa-en="#" data-wa-ar="#" data-t="b1">Message on WhatsApp</a>
           <a class="btn btn--g" href="https://www.instagram.com/brunswick.sa" target="_blank" rel="noopener" data-t="b2">Instagram</a>
         </div>
+
         <p class="pend" data-t="pend">WhatsApp number still to be supplied — the button is wired and inactive until then.</p>
         <div class="foot" style="margin-block-start:2rem;border-block-start:1px solid var(--rule)">
           <span data-t="fo1">Brunswick · Dammam &amp; Al Khobar</span>
@@ -532,7 +554,7 @@
   /* Arabic is written to read as Arabic, not as a rendering of the English above it. Where a
      literal translation went stiff the sentence is rebuilt: shorter clauses, verb-first, and the
      trade's own words -- التوريق for lamination, دفعة for a batch. */
-  var AR={"nowk":"يعرض الآن","k1":"معجنات · قهوة · مخبز","n1":"المخبز","n2":"القائمة","n3":"القهوة","n4":"الفروع","n5":"زورونا","l1":"منذ ٢٠٢١ · الدمام","h1":"نُوَرِّق العجين بأيدينا","p1":"مخبزٌ قبل أن يكون مقهى. بدأنا في الدمام سنة ٢٠٢١، وصرنا ثلاثة فروع بالطريقة نفسها: عجينٌ يُطوى ويرتاح، وخَبزٌ على دفعات صغيرة طوال الصباح. وما يخرج من الفرن هو ما تجده أمامك.","f1h":"التوريق عندنا","f1p":"نطوي عجينة الكرواسون ونتركها ترتاح في المخبز، ولا نشتريها جاهزة. لذلك يخرج المقطع بمسامات مفتوحة غير منتظمة.","f2h":"نخبز طوال الصباح","f2p":"نفتح السادسة، وتخرج الصواني تِباعًا. ما تجده التاسعة غير الذي كان عند السابعة.","f3h":"حلو ومالح","f3p":"إلى جانب الحلو: كرواسون بالسمسم مع ديك رومي وجبنة بالأعشاب، وفوكاتشا بالفيتا والتين، وبوراتا.","l2":"القائمة","h2":"ما يخرج من الفرن","m1":"كرواسون سادة <span>9 SR</span>","m2":"كرواسون بالغرويير والزعتر","m3":"كرواسون بالتشيلي والجبن","m4":"سمسم مع ديك رومي وجبنة بالأعشاب","m5":"فراولة مع كرامبل البندق","m6":"مانجو وجوز الهند","m7":"توت أزرق وليمون","m8":"لفّة التوت والهيل","m9":"شوكولاتة وجوز الهند","m10":"محشوّة كريمة وبراوني","m11":"بلاك فورست بالكرز والقشدة","m12":"كيك الفستق <span>27 SR</span>","m13":"كيك الليمون","m14":"كلافوتي","m15":"تارت التوت الأحمر والأسود","m16":"كريم بروليه","m17":"كوكيز بقطع الشوكولاتة","m18":"كوكيز محشوّة","m19":"كيك محشو","m20":"بريوش وخبز بالحبوب","m21":"خبز التوست","m22":"فوكاتشا بالفيتا والتين","m23":"بوراتا","m24":"كرات الطاقة — فستق وجوز هند وكاكاو","m25":"علب معجنات مشكّلة","m26":"كيك بالأسماء","m27":"قائمة رمضان","m28":"أصناف تتغيّر بالموسم","mnote":"السعران الظاهران هما المؤكدان فقط، وبقية الأسعار تجدونها في الفرع.","l3":"برانزويك","h3":"السعادة صناعة بيتية","l7":"القهوة","h7":"القهوة ليست إضافة","p7":"نحضّر القهوة على البار بآلات لا مارزوكو ومطاحن أنفيم، ونطحنها عند الطلب بجانب واجهة المعجنات لا في الخلف.","k2":"إسبريسو","k2v":"لا مارزوكو برأسين","k3":"المطاحن","k3v":"أنفيم، مطحنة لكل خلطة","k4":"تقطير","k4v":"يدوي على البار","k5":"من","k5v":"السادسة صباحًا مع أول صينية","l4":"الفروع","h4":"ثلاثة فروع بمخبزٍ واحد","c1":"الواجهة","c2":"اللوحة","c3":"واجهة المعجنات","c4":"البار","c5":"الجلسات","c6":"الفخار","l5":"زورونا","h5":"نفتح من السادسة","a1":"٤٢٧٢ طريق الإمام محمد بن سعود، حي الفيصلية، الدمام ٣٢٢٧٢","a2":"الخبر الشمالية","a3":"الراكة، الخبر","anote":"عنوانا فرعَي الخبر على خرائط قوقل؛ لم نضع هنا إلا ما تأكّد لدينا.","l6":"اطلب","h6":"تموين وكيك بالأسماء","p6":"علب معجنات للاجتماعات والمناسبات، وكيك يُكتب عليه الاسم. أرسل لنا التاريخ والعدد والاسم المطلوب.","b1":"راسلنا على واتساب","b2":"إنستقرام","pend":"رقم الواتساب لم يصل بعد — الزر جاهز وغير مفعّل.","fo1":"برانزويك · الدمام والخبر","fo2":"تصميم مقترح — ليس الموقع الرسمي"};
+  var AR={"nowk":"يعرض الآن","k1":"معجنات · قهوة · مخبز","n1":"المخبز","n2":"القائمة","n3":"القهوة","n4":"الفروع","n5":"زورونا","l1":"منذ ٢٠٢١ · الدمام","h1":"نُوَرِّق العجين بأيدينا","p1":"مخبزٌ قبل أن يكون مقهى. بدأنا في الدمام سنة ٢٠٢١، وصرنا ثلاثة فروع بالطريقة نفسها: عجينٌ يُطوى ويرتاح، وخَبزٌ على دفعات صغيرة طوال الصباح. وما يخرج من الفرن هو ما تجده أمامك.","f1h":"التوريق عندنا","f1p":"نطوي عجينة الكرواسون ونتركها ترتاح في المخبز، ولا نشتريها جاهزة. لذلك يخرج المقطع بمسامات مفتوحة غير منتظمة.","f2h":"نخبز طوال الصباح","f2p":"نفتح السادسة، وتخرج الصواني تِباعًا. ما تجده التاسعة غير الذي كان عند السابعة.","f3h":"حلو ومالح","f3p":"إلى جانب الحلو: كرواسون بالسمسم مع ديك رومي وجبنة بالأعشاب، وفوكاتشا بالفيتا والتين، وبوراتا.","l2":"القائمة","h2":"ما يخرج من الفرن","m1":"كرواسون سادة <span>9 SR</span>","m2":"كرواسون بالغرويير والزعتر","m3":"كرواسون بالتشيلي والجبن","m4":"سمسم مع ديك رومي وجبنة بالأعشاب","m5":"فراولة مع كرامبل البندق","m6":"مانجو وجوز الهند","m7":"توت أزرق وليمون","m8":"لفّة التوت والهيل","m9":"شوكولاتة وجوز الهند","m10":"محشوّة كريمة وبراوني","m11":"بلاك فورست بالكرز والقشدة","m12":"كيك الفستق <span>27 SR</span>","m13":"كيك الليمون","m14":"كلافوتي","m15":"تارت التوت الأحمر والأسود","m16":"كريم بروليه","m17":"كوكيز بقطع الشوكولاتة","m18":"كوكيز محشوّة","m19":"كيك محشو","m20":"بريوش وخبز بالحبوب","m21":"خبز التوست","m22":"فوكاتشا بالفيتا والتين","m23":"بوراتا","m24":"كرات الطاقة — فستق وجوز هند وكاكاو","m25":"علب معجنات مشكّلة","m26":"كيك بالأسماء","m27":"قائمة رمضان","m28":"أصناف تتغيّر بالموسم","mnote":"السعران الظاهران هما المؤكدان فقط، وبقية الأسعار تجدونها في الفرع.","l3":"برانزويك","h3":"السعادة صناعة بيتية","l7":"القهوة","h7":"القهوة ليست إضافة","p7":"نحضّر القهوة على البار بآلات لا مارزوكو ومطاحن أنفيم، ونطحنها عند الطلب بجانب واجهة المعجنات لا في الخلف.","k2":"إسبريسو","k2v":"لا مارزوكو برأسين","k3":"المطاحن","k3v":"أنفيم، مطحنة لكل خلطة","k4":"تقطير","k4v":"يدوي على البار","k5":"من","k5v":"السادسة صباحًا مع أول صينية","l4":"الفروع","h4":"ثلاثة فروع بمخبزٍ واحد","c1":"الواجهة","c2":"اللوحة","c3":"واجهة المعجنات","c4":"البار","c5":"الجلسات","c6":"الفخار","l5":"زورونا","h5":"نفتح من السادسة","a1":"٤٢٧٢ طريق الإمام محمد بن سعود، حي الفيصلية، الدمام ٣٢٢٧٢","a2":"الخبر الشمالية","a3":"الراكة، الخبر","anote":"عنوانا فرعَي الخبر على خرائط قوقل؛ لم نضع هنا إلا ما تأكّد لدينا.","l6":"اطلب","h6":"تموين وكيك بالأسماء","p6":"علب معجنات للاجتماعات والمناسبات، وكيك يُكتب عليه الاسم. أرسل لنا التاريخ والعدد والاسم المطلوب.","b1":"راسلنا على واتساب","b2":"إنستقرام","pend":"رقم الواتساب لم يصل بعد — الزر جاهز وغير مفعّل.","rof":"من ٥","rcount":"312 تقييم","rlink":"اقرأها على قوقل","fo1":"برانزويك · الدمام والخبر","fo2":"تصميم مقترح — ليس الموقع الرسمي"};
   var EN={}; document.querySelectorAll('[data-t]').forEach(function(el){ EN[el.dataset.t]=el.innerHTML; });
   var ar=false, btn=document.getElementById('lang');
   btn.addEventListener('click',function(){
@@ -542,6 +564,8 @@
     document.querySelectorAll('[data-t]').forEach(function(el){
       var v=ar?AR[el.dataset.t]:EN[el.dataset.t]; if(v!=null) el.innerHTML=v;
     });
+    var wa=document.querySelector('[data-wa-en]');
+    if(wa){ var u=ar?wa.getAttribute('data-wa-ar'):wa.getAttribute('data-wa-en'); if(u) wa.href=u; }
     btn.textContent=ar?'English':'العربية'; lastSeg=-1; apply(cur); refreshH(); measure();
   });
 })();
