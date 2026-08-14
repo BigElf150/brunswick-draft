@@ -205,8 +205,10 @@
     letter-spacing:-.01em}
   .trust__n sub{font-family:var(--ui);font-size:.28em;font-weight:400;opacity:.6;
     vertical-align:baseline;margin-inline-start:.35em}
-.trust__s{position:relative;display:inline-block;font-size:var(--s-1);letter-spacing:.22em;
-    line-height:1;white-space:nowrap}
+.trust__s{position:relative;display:inline-block;font-size:var(--s-1);line-height:1;
+    white-space:nowrap;letter-spacing:0}
+  /* letter-spacing must stay 0 here: it pads the row (including after the last glyph), so a
+     percentage clip would land past the fifth star and 4.7 would render as five full ones. */
   /* 4.7 must not draw five full stars. The filled row is clipped to the exact percentage so the
      glyphs never round the rating up. */
   .trust__s i{font-style:normal;opacity:.28}
