@@ -205,7 +205,13 @@
     letter-spacing:-.01em}
   .trust__n sub{font-family:var(--ui);font-size:.28em;font-weight:400;opacity:.6;
     vertical-align:baseline;margin-inline-start:.35em}
-  .trust__s{color:var(--band-fg);letter-spacing:.22em;font-size:var(--s-1)}
+.trust__s{position:relative;display:inline-block;font-size:var(--s-1);letter-spacing:.22em;
+    line-height:1;white-space:nowrap}
+  /* 4.7 must not draw five full stars. The filled row is clipped to the exact percentage so the
+     glyphs never round the rating up. */
+  .trust__s i{font-style:normal;opacity:.28}
+  .trust__s b{position:absolute;inset-block-start:0;inset-inline-start:0;overflow:hidden;
+    width:var(--fill);font-weight:400;display:block}
   .trust__m{font-family:var(--ui);font-size:var(--s--1);opacity:.75;letter-spacing:.06em}
   .trust__m a{color:inherit}
 
@@ -393,7 +399,7 @@
     <section class="panel panel--band">
       <div class="wrap trust rv">
         <span class="trust__n">4.7<sub data-t="rof">out of 5</sub></span>
-        <span class="trust__s" aria-hidden="true">★★★★★</span>
+        <span class="trust__s" style="--fill:94.0%" role="img" aria-label="4.7 out of 5"><i aria-hidden="true">★★★★★</i><b aria-hidden="true">★★★★★</b></span>
         <span class="trust__m"><span data-t="rcount">312 reviews</span> · <a href="https://maps.app.goo.gl/FkFzkMNubNddSxtK9" target="_blank" rel="noopener" data-t="rlink">Read them on Google</a></span>
       </div>
     </section>
